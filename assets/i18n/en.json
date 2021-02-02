@@ -1,0 +1,81 @@
+{
+    "HEADER": {
+        "SWITCHLANGUAGE" : {
+            "TITLE" : "Switch Language"
+        },
+        "SWITCHCONDO" : {
+            "TITLE" : "Switch Condo",
+            "ADMIN_STAFF" : "Admin/Staff",
+            "OWNER_TENANT" : "Owner/Tenant"
+        },
+        "SETTINGS" : {
+            "SWITCHTHEME": {
+                "TITLE" : "Switch Theme"
+            },
+            "SWITCHLAYOUT": {
+                "TITLE" : "Switch Layout"
+            }
+        },
+        "TODO" : {
+            "TITLE" : "Todo"
+        },
+        "NOTIFICATIONS" : {
+            "TITLE" : "Notifications",
+            "NODATA": "No Recent data"
+        },
+        "USER" : {
+            "SIGNED_IN" : "Signed in as",
+            "PROFILE" : "Profile",
+            "LOGOUT" : "Logout"
+        }
+    },
+    "MAIN": {
+            "UNITUSER": {
+                "ADDUSER": {
+                    "TITLE": "Add User",
+                    "EMAIL": "Email",
+                    "CHANGEBUTTON": "Change",
+                    "CHECKBUTTON": "Check",
+                    "USERTYPE": "User Type",
+                    "OWNER": "Owner",
+                    "TENANT": "Tenant",
+                    "FIRSTNAME": "First Name",
+                    "LASTNAME": "Last Name",
+                    "TOWERNO": "Tower No",
+                    "MOBILENO": "Mobile No",
+                    "GENDER": "Gender",
+                    "MALE": "Male",
+                    "FEMALE": "Female",
+                    "NOTIFICATION": "Notification",
+                    "AUTOGENERATEPASSWORD":"Auto Generate password",
+                    "SETUPPASSWORD": "Setup a Password",
+                    "ISRESIDINGINCONDO":"Is Residing In Condo",
+                    "ISPRIMARYCONTACTFORBILLING": "Is Primary Contact for Billing",
+                    "PASSWORD": "Password",
+                    "SMS": "SMS",
+                    "SUBMITBUTTON": "Submit",
+                    "CLEARBUTTON": "Clear"
+                }
+            }
+    },
+    "PLACEHOLDER": {
+        "TOWER": "Select Tower",
+        "UNIT": "Select Unit"
+    },
+    "BUTTONS": {
+        "CHANGEBUTTON": "Change",
+        "CHECKBUTTON": "Check",
+        "SUBMITBUTTON": "Submit",
+        "CLEARBUTTON": "Clear"
+    },
+    "VALIDATION": {
+        "CHECKEMAIL": "already exists in the below units. Do you want to add this user to another unit in your condo",
+        "USER": "User",
+        "TITLE": "Confirm Action",
+        "TYPE": "email"
+    },
+    "CONFIRMDLG": {
+        "YES": "Yes",
+        "NO": "No"
+    }
+}

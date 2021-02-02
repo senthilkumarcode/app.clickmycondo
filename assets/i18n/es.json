@@ -1,0 +1,81 @@
+{
+    "HEADER": {
+        "SWITCHLANGUAGE" : {
+            "TITLE" : "Cambiar idioma"
+        },
+        "SWITCHCONDO" : {
+            "TITLE" : "Cambiar Condo",
+            "ADMIN_STAFF" : "Administrador/Personal",
+            "OWNER_TENANT" : "Propietario/Inquilino"
+        },
+        "SETTINGS" : {
+            "SWITCHTHEME": {
+                "TITLE" : "Cambiar tema"
+            },
+            "SWITCHLAYOUT": {
+                "TITLE" : "Diseño del interruptor"
+            }
+        },
+        "TODO" : {
+            "TITLE" : "que hacer"
+        },
+        "NOTIFICATIONS" : {
+            "TITLE" : "Notificaciones",
+            "NODATA": "Sin datos recientes"
+        },
+        "USER" : {
+            "SIGNED_IN" : "Registrado como",
+            "PROFILE" : "perfil",
+            "LOGOUT" : "cerrar sesión"
+        }
+    },
+    "MAIN": {
+            "UNITUSER": {
+                "ADDUSER": {
+                    "TITLE": "Agregar usuario",
+                    "EMAIL": "Email",
+                    "CHANGEBUTTON": "Cambio",
+                    "CHECKBUTTON": "Checo",
+                    "USERTYPE": "Tipo de usuario",
+                    "OWNER": "Propietario",
+                    "TENANT": "Inquilino",
+                    "FIRSTNAME": "Primer nombre",
+                    "LASTNAME": "Apellido",
+                    "TOWERNO": "Torre No",
+                    "MOBILENO": "No móviles",
+                    "GENDER": "Género",
+                    "MALE": "Masculino",
+                    "FEMALE": "Hembra",
+                    "NOTIFICATION": "Notificación",
+                    "AUTOGENERATEPASSWORD":"Generar contraseña automáticamente",
+                    "SETUPPASSWORD": "Configurar una contraseña",
+                    "ISRESIDINGINCONDO":"Está residiendo en condominio",
+                    "ISPRIMARYCONTACTFORBILLING": "Es el contacto principal para la facturación",
+                    "PASSWORD": "Contraseña",
+                    "SMS": "SMS",
+                    "SUBMITBUTTON": "Enviar",
+                    "CLEARBUTTON": "Claro"
+                }
+            }
+    },
+    "PLACEHOLDER": {
+        "TOWER": "Seleccionar torre",
+        "UNIT": "Seleccionar unidad"
+    },
+    "BUTTONS": {
+        "CHANGEBUTTON": "Cambio",
+        "CHECKBUTTON": "Cheque",
+        "SUBMITBUTTON": "Enviar",
+        "CLEARBUTTON": "Clara"
+    },
+    "VALIDATION": {
+        "CHECKEMAIL": "ya existe en las siguientes unidades. ¿Quiere agregar este usuario a otra unidad en su condominio",
+        "USER": "Usuario",
+        "TITLE": "Confirmar acción",
+        "TYPE": "correo electrónico"
+    },
+    "CONFIRMDLG": {
+        "YES": "Yes",
+        "NO": "No"
+    }
+}
