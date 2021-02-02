@@ -5085,7 +5085,7 @@
         runGuardsAndResolvers: 'always',
         children: [{
           path: '',
-          redirectTo: 'home',
+          redirectTo: 'login',
           pathMatch: 'full'
         }, {
           path: 'login',

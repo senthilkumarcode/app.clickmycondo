@@ -3260,7 +3260,7 @@ const routes = [
         },
         runGuardsAndResolvers: 'always',
         children: [
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
+            { path: '', redirectTo: 'login', pathMatch: 'full' },
             { path: 'login', component: _pages_authentication_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"], canActivate: [src_app_core_auth_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
             { path: 'join', component: _pages_join_join_component__WEBPACK_IMPORTED_MODULE_8__["joinComponent"], canActivate: [src_app_core_auth_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
             { path: 'signup', component: _pages_authentication_signup_signup_component__WEBPACK_IMPORTED_MODULE_7__["SignupComponent"], canActivate: [src_app_core_auth_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
