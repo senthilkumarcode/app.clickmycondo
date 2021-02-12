@@ -57,25 +57,318 @@
                     "CLEARBUTTON": "Clear"
                 }
             }
+            
+    },
+    "SERVICE": {
+        "HELPDESK": {
+            "CREATETICKET": {
+                "CREATETITLE": "Create Ticket",
+                "EDITTITLE":"Edit Ticket",
+                "TICKETFOR":"Create Ticket For",
+                "FORSELF": "Self",
+                "FOROWNER": "Owner",
+                "FORTENANT": "Tenant",
+                "FORSTAFF": "Staff",
+                "FORADMIN": "Admin",
+                "TICKETID": "Ticket ID",
+                "DATEOFCREATION": "Date Of Creation",
+                "CREATEDBY": "Created By",
+                "TICKETTYPE": "Ticket Type",
+                "CATEGORY": "Category",
+                "PRIORITY": "Priority",
+                "SUPERVISOR": "Supervisor",
+                "ASSIGNEDSTAFF": "Assigned To Staff",
+                "TICKETFORADMIN": "Ticket For Admin",
+                "TICKETFORSTAFF": "Ticket For Staff",
+                "STATUS": "Status",
+                "TOWERNO": "Tower No",
+                "UNITNO": "Unit No",
+                "PRIMARYNAME": "Primary Name",
+                "SUBJECT": "Subject",
+                "DESCRIPTION": "Description",
+                "ADDCOMMENT": "Add Comment"
+            },
+            "VIEWTICKET": {
+                "TITLE": "All Tickets",
+                "TOTALRESULTS": "results",
+                "CREATETICKET": "Create Ticket",
+                "TICKETCREATED": "Ticket Created",
+                "ASSIGNEDTO": "Assigned to",
+                "CATEGORY": "Category",
+                "NORESULTSFOUND": "No Results found",
+                "PRIORITY": {
+                    "HIGH": "High",
+                    "LOW": "Low",
+                    "MEDIUM": "Medium"
+                },
+                "STATUS": {
+                    "NEW": "New",
+                    "ASSIGNED": "Assigned - Inprogress",
+                    "RESOLVED": "Resolved",
+                    "ONHOLD": "On Hold",
+                    "CLOSED": "Closed"
+                }
+            },
+            "SETTINGS": {
+               "TITLE" : "Settings",
+               "TIPS": "Tips",
+               "PRIVATECATEGORY": "Private Category",
+               "COMMONCATEGORY": "Private Category",
+               "TOTALRESULTS": "results",
+               "HINT1": "Tips :  You have two types of Ticket Category to setup.",
+               "HINT2": "Common category refer to the issues related to condo which is at common to all units (For Example : Swimming pool not clean)",
+               "HINT3": "Private category refer to the issues inside  the units ( For Example : Plumbing inside the Condo)",
+               "HINT4": "We have some standard Common Categories created for you, you can assign a supervisor and assign escalation if you required.",
+               "HINT5": "If you have supervisor assigned to a Category , tickets will get assigned to Supervisor automatically. Supervisor will have to re-assign the ticket to Staff.",
+               "COMMONTICKETCATEGORY": "COMMON TICKET CATEGORY",
+               "PRIVATETICKETCATEGORY": "PRIVATE TICKET CATEGORY",
+               "CATEGORYNAME": "Category Name",
+               "DEFAULTSUPERVISOR": "Default Supervisor",
+               "ESCLATIONSETUP": "Esclation Setup (Optional)",
+               "AUTOESCLATETOLEVEL1AFTER": "Auto Esclate to Level 1 After",
+               "DAYS": "Days",
+               "LEVEL1MANAGER": "Select Level-1 Manager",
+               "AUTOESCLATETOLEVEL2AFTER": "Auto Esclate to Level 2 After",
+               "LEVEL2MANAGER": "Select Level-2 Manager"
+            }
+        }
+    },
+    "VISITOR": {
+        "CREATEVISITOR": {
+            "CREATETITLE": "Create Expected Visitor",
+            "EDITTITLE": "Edit Expected Visitor",
+            "EXPECTEDVISITTYPE": "Expected Visit Type",
+            "EXPECTEDVISITORNAME": "Expected Visitor Name",
+            "EXPECTEDVISITORCOUNT": "Expected Visitor Count",
+            "EXPECTEDMOBILENO": "Expected Phone/Mobile No",
+            "EXPECTEDVISITDATETIME": "Expected Date/Time of Visit",
+            "EXPECTEDVISITOUTTIME": "Expected Out/Time of Visit",
+            "EXPECTEDDURATIONVISIT": "Expected Duration of Visit",
+            "EXPECTEDVISITCATEGORY": "Expected Visit Category",
+            "REASONFORVISIT":"Reason for Visit",
+            "TOWERNO": "Tower No",
+            "UNITNO": "Unit No",
+            "PRIMARYNAME": "Primary Name",
+            "STAFF": "Staff"
+        },
+        "EXPECTEDVISITORS": {
+            "TITLE": "Expected Visitors",
+            "EXPECTEDIN": "Expected IN",
+            "EXPECTEDOUT": "Expected OUT",
+            "VISITTYPE": "Visit Type",
+            "TOTALRESULTS": "results",
+            "NORESULTS": "No Results found",
+            "PASSID": "Pass ID"
+        },
+        "FREQUENTVISITOR": {
+            "TITLE": "Create Frequent Visitor",
+            "FREQUENTVISITORNAME": "Frequent Visitor Name",
+            "FREQUENTVISITORCOUNT": "Frequent Visitor Count",
+            "FREQUENTMOBILENO": "Frequent Phone/Mobile No",
+            "FREQUENTVISITCATEGORY": "Frequent Visit Category",
+            "REASONFORVISIT": "Reason for Visit",
+            "VENDORPASS": "Vendor Pass",
+            "EXPECTEDVISITTYPE": "Expected Visit Type",
+            "TOWERNO": "Tower No",
+            "UNITNO": "Unit No",
+            "PRIMARYNAME": "Primary Name",
+            "STAFF": "Staff",
+            "VISITORNAME": "Visitor Name",
+            "VISITORCOUNT": "Visitor Count",
+            "MOBILENO": "Phone/Mobile No",
+            "TIMEOFVISIT": "Time of Visit",
+            "OUTTIME": "Out-Time",
+            "VISITCATEGORY": "Visit Category",
+            "FREQUENTVISITOR": "Frequent Visitor",
+            "CREATEBTNNAME": "Create another frequent visitor",
+            "VIEWBTNNAME": "View list of frequent visitor",
+            "CREATEVENDORBTN": "Create another vendor pass",
+            "VIEWVENDORBTN": "View list of vendor pass",
+            "EXPECTEDVISITORNAME": "Expected Visitor",
+            "CREATEANOTHEREXPECTEDVISITOR": "Create another expected visitor",
+            "VIEWEXPECTEDVISITOR": "View list of expected visitor"
+        },
+        "FREQUENTVISITORLIST": {
+            "TITLE": "Frequent Visitor List",
+            "VENDORPASSLIST": "Vendor Pass List",
+            "TOTALRESULTS": "results",
+            "NORESULTS": "No Results found",
+            "PASSID": "Pass ID",
+            "EXPECTEDIN": "Expected IN",
+            "EXPECTEDOUT": "Expected OUT",
+            "VISITTYPE": "Visit Type",
+            "TOWERUNIT": "Tower & Unit"
+
+        },
+        "CURRENTLYCHECKEDIN": {
+            "TITLE": "Currently Checked In",
+            "TOTALRESULTS": "results",
+            "NORESULTS": "No Results found",
+            "PASSID": "Pass ID",
+            "INTIME": "IN Time",
+            "EXPECTEDOUT": "Expected Out",
+            "VISITTYPE": "Visit Type",
+            "TOWERUNIT": "Tower & Unit"
+        },
+        "EXPECTEDVISITORUSER": {
+            "CHECKEDINTITLE": "Currently Checked In",
+            "HISTORYTITLE": "Visitor History"
+        },
+        "VISITORSHISTORY": {
+            "TITLE": "Visitors History",
+            "TOTALRESULTS": "results"
+        }
+        
+    },
+    "FACILITY": {
+        "CREATEBOOKING": {
+            "CREATETITLE": "Create Booking",
+            "EDITTITLE": "Edit Booking",
+            "VIEWTITLE": "View Booking",
+            "BOOKINGFOR": "Booking For",
+            "GUEST": "Guest",
+            "USER": "User",
+            "FACILITYDETAILS": "Facility Details",
+            "FACILITYNAME": "Facility Name",
+            "DATE": "Select Date",
+            "SLOT": "Select Slot",
+            "FROMTIME": "From Time",
+            "TOTIME": "To Time",
+            "ENTERMIN": "Please Enter Min",
+            "HOURSORMAX": "Hours or Max",
+            "HOURS": "Hours",
+            "EVENTNAME": "Event Name",
+            "BOOKINGDETAILS": "Booking Details",
+            "SECURITYAMOUNT": "Security Amount",
+            "BOOKINGPERAMOUNT": "Booking Amount Per",
+            "COST": "Cost",
+            "TAX": "Tax",
+            "DISCOUNTAMOUNT": "Discount Amount",
+            "MEMBERSHIPDISCOUNT": "Membership Discount",
+            "FINALBOOKINGAMOUNT": "Final Booking Amount",
+            "UNITRESIDENTDETAILS": "Unit Resident Details",
+            "TOWERNO": "Tower No",
+            "UNITNO": "Unit No",
+            "PRIMARYNAME": "Primary Name",
+            "GUESTDETAILS": "Guest Details",
+            "GUESTNAME": "Guest Name",
+            "GUESTPHONE": "Guest Phone",
+            "RELATIONSHIPGUEST": "Relatioship To Guest",
+            "GUESTATTEND": "No Of Guest To Attend",
+            "CREATEVISITORPASS": "Create Visitor Pass",
+            "VISITORPASS": "Visitor Pass",
+            "STATUS": "Status",
+            "COMMENT": "Comment"
+        }
+    },
+    "MOVEINOUT": {
+        "VIEWMOVEIN": {
+            "TITLE": "MoveIn",
+            "TOTALRESULTS": "results"
+        },
+        "CREATEMOVEIN": {
+            "CREATETITLE": "Add Movein",
+            "VIEWTITLE": "View Movein",
+            "FAMILYCOUNT": "Family Count",
+            "MOVEINDATE": "MoveIn Date",
+            "MOVEINTIME": "MoveIn Time",
+            "FOREIGNNATIONAL": "Is the request for a Foreign National?",
+            "COMMENTS": "Comments",
+            "TOWERNO": "Tower No",
+            "UNITNO": "Unit No",
+            "PRIMARYNAME": "Primary Name",
+            "YES": "Yes",
+            "NO": "No",
+            "DOCUMENTSREQUIRED": "Documents Required"
+        }
+    },
+    "DOCUMENTS": {
+        "USER": {
+            "MYDOCUMENTS": {
+                "TITLE": "My Documents",
+                "TOTALITEMS": "Items",
+                "DOCUMENTNAME": "Document Name",
+                "DOCUMENTCATEGORY": "Document Category",
+                "INSERTEDON": "Inserted On",
+                "DESCRIPTION": "Description",
+                "DOCUMENT": "Document"
+            }
+        }
     },
     "PLACEHOLDER": {
         "TOWER": "Select Tower",
-        "UNIT": "Select Unit"
+        "UNIT": "Select Unit",
+        "TICKETTYPE": "Select Ticket Type",
+        "CATEGORY": "Select Category",
+        "PRIORITY": "Select Priority",
+        "SUPERVISOR":"Select Supervisor",
+        "STAFFLABEL": "Select Staff",
+        "STATUS": "Select Status",
+        "TEXT": "Enter text",
+        "DESCRIPTION": "Enter Description",
+        "SOMETEXT": "some text here",
+        "VISITORNAME": "Visitor Name",
+        "VISITORCOUNT": "Visitor Count",
+        "DURATIONINFO": "Duration Info",
+        "ENTERPURPOSE": "Enter Purpose",
+        "VISIT": "Select Visit",
+        "PRIMARYNAME": "Primary Name",
+        "STAFF": "Select Staff",
+        "FACILITYNAME": "Select Facility Name",
+        "EVENTNAME": "Event Name",
+        "SECURITYAMOUNT": "Security Amount",
+        "AMOUNT": "Amount",
+        "COST": "Cost",
+        "TAX": "Tax",
+        "DISCOUNT": "Discount",
+        "MEMBERSHIPDISCOUNT": "MemberShip Discount",
+        "TOTAL": "Total",
+        "GUESTNAME": "Guest Name",
+        "GUESTPHONE": "Guest Phone",
+        "RELATIONSHIPGUEST": "Relatioship To Guest",
+        "GUESTATTEND": "No Of Guest To Attend",
+        "VISITORPASS": "Visitor Pass",
+        "ENTERCOMMENT": "Enter Comment",
+        "T&C": "Terms and Condition",
+        "CATEGORYNAME": "Category Name",
+        "DEFAULTSUPERVISOR": "Default Supervisor",
+        "LEVEL1MANAGER": "Select Level-1 Manager",
+        "LEVEL2MANAGER": "Select Level-2 Manager"
+
     },
     "BUTTONS": {
         "CHANGEBUTTON": "Change",
         "CHECKBUTTON": "Check",
         "SUBMITBUTTON": "Submit",
-        "CLEARBUTTON": "Clear"
+        "CLEARBUTTON": "Clear",
+        "CREATEBUTTON": "Create",
+        "UPDATEBUTTON": "Update",
+        "BACKBUTTON": "Back",
+        "ADDCOMMENT": "Add Comment",
+        "CANCELBUTTON": "Cancel",
+        "EXPECTEDVISITOR": "Expected Visitor",
+        "VISITOR": "Visitor",
+        "ADDMOVEIN": "Add MoveIn",
+        "UPLOADDOCUMENT": "Upload Documents",
+        "ADD": "Add"
     },
     "VALIDATION": {
-        "CHECKEMAIL": "already exists in the below units. Do you want to add this user to another unit in your condo",
+        "EXISTSUSERWITHUNITS": "already exists in the below units. Do you want to add this user to another unit in your condo",
+        "EXISTSUSERWITHOUTUNITS": "",
         "USER": "User",
         "TITLE": "Confirm Action",
         "TYPE": "email"
     },
     "CONFIRMDLG": {
         "YES": "Yes",
-        "NO": "No"
+        "NO": "No",
+        "OK": "Ok"
+    },
+    "HYPERLINK": {
+        "APPROVE": "Approve",
+        "REJECT": "Reject",
+        "CANCEL": "Cancel",
+        "EDIT": "Edit",
+        "VIEW": "View"
     }
 }

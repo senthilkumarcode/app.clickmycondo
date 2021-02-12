@@ -307,7 +307,7 @@
           value: function clearAllField() {
             var _this = this;
 
-            var message = "Are you sure, you want to clear the data ?";
+            var message = "Do you want to cancel user creation ?";
             var dialogData = new src_app_shared_components_common_confirm_modal_common_confirm_modal_component__WEBPACK_IMPORTED_MODULE_14__["ConfirmDialogModel"]("Confirm Action", message);
             var dialogRef = this.dialog.open(src_app_shared_components_common_confirm_modal_common_confirm_modal_component__WEBPACK_IMPORTED_MODULE_14__["CommonConfirmModalComponent"], {
               panelClass: 'material-dialog-medium',
@@ -342,7 +342,7 @@
                   _this2.translateService.get('VALIDATION').subscribe(function (data) {
                     console.log(data);
                     var confirmBoxData = {
-                      message: "".concat(data.USER, "  ").concat(_this2.user.emailId, "  ").concat(data.CHECKEMAIL, " ?"),
+                      message: "".concat(data.USER, "  ").concat(_this2.user.emailId, "  ").concat(data.EXISTSUSERWITHUNITS, " ?"),
                       title: "".concat(data.TITLE),
                       type: 'email',
                       response: respone[0].blockunitUserDetails
@@ -359,13 +359,15 @@
 
                   _this2.cd.markForCheck();
                 } else {
-                  var confirmBoxData = {
-                    message: "User ".concat(_this2.user.emailId, " already exists and not assigned to any units. Do you want to add this emailId to an unit of your community?"),
-                    title: 'Confirm Action',
-                    type: 'email'
-                  };
+                  _this2.translateService.get('VALIDATION').subscribe(function (data) {
+                    var confirmBoxData = {
+                      message: "User ".concat(_this2.user.emailId, " already exists and not assigned to any units. Do you want to add this emailId to an unit of your community?"),
+                      title: "".concat(data.TITLE),
+                      type: 'email'
+                    };
 
-                  _this2.confirmBox(confirmBoxData, respone[0]);
+                    _this2.confirmBox(confirmBoxData, respone[0]);
+                  });
                 }
               }, function (error) {
                 _this2.isValidEmail = false;

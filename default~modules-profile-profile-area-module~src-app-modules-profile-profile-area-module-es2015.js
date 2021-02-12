@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"my-documents-wrapper p-5\">\n     <!-- Loader -->\n     <app-loader *ngIf=\"!isDataLoaded\"></app-loader>\n     <!-- My Documents Header -->\n     <div class=\"d-flex mb-4\">\n         <div>\n             <h4>My Documents</h4>\n             <p class=\"text-secondary\">{{totalItems}} Items</p>\n         </div>\n         <div class=\"ml-auto d-none d-md-block mr-3\">\n             <input type=\"text\" class=\"form-control\" placeholder=\"Search...\" [(ngModel)]=\"documentSearch\">\n         </div>\n         <div>\n             <button mat-flat-button [color]=\"'primary'\" (click)=\"openUploadModal()\">Upload Documents</button>\n         </div>\n     </div>\n     <!-- Documents List -->\n     <div *ngIf=\"isDataLoaded\">\n         <div class=\"bg-card shadow\" *ngFor=\"let data of documentViewList  | simpleSearch: documentSearch\">\n             <form>\n                 <div class=\"row\">\n                     <div class=\"col-sm-4\">\n                         <div class=\"input-box\">\n                             <label>Document Name</label>\n                             <p>{{data.userDocumentName}}</p>\n                         </div>\n                     </div>\n                     <div class=\"col-sm-4\">\n                         <div class=\"input-box\">\n                             <label>Document Category</label>\n                             <p>{{data.userDocumentCatName}}</p>\n                         </div>\n                     </div>\n                     <div class=\"col-sm-4\">\n                         <div class=\"input-box\">\n                             <label>Inserted On</label>\n                             <p>{{getDateFormat(data.insertedOn)}}</p>\n                         </div>\n                     </div>\n                     <div class=\"col-sm-12\">\n                         <div class=\"input-box\">\n                             <label>Description</label>\n                             <p>{{data.userDocDesc}}</p>\n                         </div>\n                     </div>\n                     <div class=\"col-sm-12\">\n                         <div class=\"input-box\">\n                             <label>Document</label>\n                             <p #url>\n                                 <a *ngIf=\"data.fileUrl\" [href]=\"data.fileUrl\" target=\"_blank\">{{data.fileName}}</a>\n                                 <a href=\"javascript:void(0)\" *ngIf=\"!data.fileUrl\" (click)=\"downloadFile(data,url)\">{{data.fileName}}</a>\n                             </p>\n                         </div>\n                     </div>\n                 </div>\n             </form>\n         </div>\n     </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"my-documents-wrapper p-5\">\n     <!-- Loader -->\n     <app-loader *ngIf=\"!isDataLoaded\"></app-loader>\n     <!-- My Documents Header -->\n     <div class=\"d-flex mb-4\">\n         <div>\n             <h4>{{'DOCUMENTS.USER.MYDOCUMENTS.TITLE' | translate}} </h4>\n             <p class=\"text-secondary\">{{totalItems}} {{'DOCUMENTS.USER.MYDOCUMENTS.TOTALITEMS' | translate}} </p>\n         </div>\n         <div class=\"ml-auto d-none d-md-block mr-3\">\n             <input type=\"text\" class=\"form-control\" placeholder=\"Search...\" [(ngModel)]=\"documentSearch\">\n         </div>\n         <div>\n             <button mat-flat-button [color]=\"'primary'\" (click)=\"openUploadModal()\">{{'BUTTONS.UPLOADDOCUMENT' | translate}}</button>\n         </div>\n     </div>\n     <!-- Documents List -->\n     <div *ngIf=\"isDataLoaded\">\n         <div class=\"bg-card shadow\" *ngFor=\"let data of documentViewList  | simpleSearch: documentSearch\">\n             <form>\n                 <div class=\"row\">\n                     <div class=\"col-sm-4\">\n                         <div class=\"input-box\">\n                             <label>{{'DOCUMENTS.USER.MYDOCUMENTS.DOCUMENTNAME' | translate}}</label>\n                             <p>{{data.userDocumentName}}</p>\n                         </div>\n                     </div>\n                     <div class=\"col-sm-4\">\n                         <div class=\"input-box\">\n                             <label>{{'DOCUMENTS.USER.MYDOCUMENTS.DOCUMENTCATEGORY' | translate}}</label>\n                             <p>{{data.userDocumentCatName}}</p>\n                         </div>\n                     </div>\n                     <div class=\"col-sm-4\">\n                         <div class=\"input-box\">\n                             <label>{{'DOCUMENTS.USER.MYDOCUMENTS.INSERTEDON' | translate}}</label>\n                             <p>{{getDateFormat(data.insertedOn)}}</p>\n                         </div>\n                     </div>\n                     <div class=\"col-sm-12\">\n                         <div class=\"input-box\">\n                             <label>{{'DOCUMENTS.USER.MYDOCUMENTS.DESCRIPTION' | translate}}</label>\n                             <p>{{data.userDocDesc}}</p>\n                         </div>\n                     </div>\n                     <div class=\"col-sm-12\">\n                         <div class=\"input-box\">\n                             <label>{{'DOCUMENTS.USER.MYDOCUMENTS.DOCUMENT' | translate}}</label>\n                             <p #url>\n                                 <a *ngIf=\"data.fileUrl\" [href]=\"data.fileUrl\" target=\"_blank\">{{data.fileName}}</a>\n                                 <a href=\"javascript:void(0)\" *ngIf=\"!data.fileUrl\" (click)=\"downloadFile(data,url)\">{{data.fileName}}</a>\n                             </p>\n                         </div>\n                     </div>\n                 </div>\n             </form>\n         </div>\n     </div>\n</div>");
 
 /***/ }),
 
@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"family-members-details-wrapper\">\n\n\t<app-loader *ngIf=\"!isDataLoaded\"></app-loader>\n\n\t<ng-container *ngIf=\"isDataLoaded && !isFamilyNew\">\n\t\t<div class=\"row\"  *ngIf=\"isAdmin || isUserEdit\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<div class=\"d-flex justify-content-end mb-3\">\n\t\t\t\t\t<div class=\"link\" (click)=\"showEditForm()\">\n\t\t\t\t\t\t<mat-icon  [color]=\"'primary'\" *ngIf=\"isEdit\" [svgIcon]=\"'arrow_back'\"></mat-icon>\n\t\t\t\t\t\t<mat-icon class=\"icon-md\" [color]=\"'primary'\" *ngIf=\"!isEdit\" svgIcon=\"feather:edit\"></mat-icon>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"link ml-1\" (click)=\"deleteMember()\" *ngIf=\"!isEdit\">\n\t\t\t\t\t\t<mat-icon class=\"icon-md delete\" svgIcon=\"feather:trash\"></mat-icon>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</ng-container>\n\n\t<!-- Edit Form -->\n\t<ng-container *ngIf=\"!isEdit && !isFamilyNew\">\n\t\t<form #profileFamilyForm=\"ngForm\" name=\"profileFamilyForm\" novalidate>\n\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>First Name {{userId}}</label>\n\t\t\t\t\t\t\t<p>{{user.firstName | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Middle Name</label>\n\t\t\t\t\t\t\t<p>{{user.middleName | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Last Name</label>\n\t\t\t\t\t\t\t<p>{{user.lastName | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Relationship</label>\n\t\t\t\t\t\t\t<p>{{user.relationship | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Phone/Mobile</label>\n\t\t\t\t\t\t\t<p>{{user.phoneNumber?.number | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Email</label>\n\t\t\t\t\t\t\t<p>{{user.emailId | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Date Of Birth</label>\n\t\t\t\t\t\t\t<p>{{getDOB(user.dob) | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box radio-box\">\n\t\t\t\t\t\t\t<label>Gender</label>\n\t\t\t\t\t\t\t<p>{{getGender(user.genderId) | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"select-box\">\n\t\t\t\t\t\t\t<label>Blood Group</label>\n\t\t\t\t\t\t\t<p>{{user.bloodGroup | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t</form>\n\t</ng-container>\n\n\t<!-- New Form -->\n\t<ng-container *ngIf=\"isEdit || isFamilyNew\">\n\t\t<form #profileFamilyForm=\"ngForm\" name=\"profileFamilyForm\" (ngSubmit)=\"submitProfileFamilyForm(profileFamilyForm)\" novalidate>\n\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>First Name*</label>\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Enter value\" name=\"firstName\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.firstName\" required>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Middle Name</label>\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Enter value\" name=\"middleName\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.middleName\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Last Name*</label>\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Enter value\" name=\"lastName\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.lastName\" required>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label class=\"d-block\">Phone/Mobile No<span class=\"required\">*</span></label>\n\t\t\t\t\t\t\t<ngx-intl-tel-input [inputId]=\"'userMobile'\"\n\t\t\t\t\t\t\t\t[preferredCountries]=\"preferredCountries\"\n\t\t\t\t\t\t\t\t[enableAutoCountrySelect]=\"true\" [enablePlaceholder]=\"true\"\n\t\t\t\t\t\t\t\t[searchCountryFlag]=\"true\"\n\t\t\t\t\t\t\t\t[searchCountryField]=\"[SearchCountryField.Iso2, SearchCountryField.Name]\"\n\t\t\t\t\t\t\t\t[selectFirstCountry]=\"false\"\n\t\t\t\t\t\t\t\t[selectedCountryISO]=\"selectedCountryISO\" [maxLength]=\"15\"\n\t\t\t\t\t\t\t\t[phoneValidation]=\"false\" [separateDialCode]=\"separateDialCode\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.phoneNumber\" name=\"phone\">\n\t\t\t\t\t\t\t</ngx-intl-tel-input>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"select-box\">\n\t\t\t\t\t\t\t<label>Relationship*</label>\n\t\t\t\t\t\t\t<select name=\"relationship\" id=\"relationship\" class=\"form-control\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.relationship\">\n\t\t\t\t\t\t\t\t<option [ngValue]=\"null\" disabled selected hidden>Select</option>\n\t\t\t\t\t\t\t\t<option *ngFor=\"let item of relationshipList\">{{ item }}\n\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Email</label>\n\t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" placeholder=\"Enter value\" name=\"email\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.emailId\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\n\t\t\t\t\t\t<app-datepicker\n\t\t\t\t\t\t\tlabelText=\"Date Of Birth\"\n\t\t\t\t\t\t\tfieldName=\"userDOB\"\n\t\t\t\t\t\t\t[fieldRequired]=\"'null'\"\n\t\t\t\t\t\t\ttype=\"date\"\n\t\t\t\t\t\t\t[fieldModel]=\"userFormData.dob\"\n\t\t\t\t\t\t\t(fieldParams)=\"getUserDOB($event)\">\n\t\t\t\t\t\t</app-datepicker>\n\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box radio-box\">\n\t\t\t\t\t\t\t<label>Gender*</label>\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t<input name=\"genderType\" id=\"male\" [(ngModel)]=\"userFormData.genderId\" [value]=\"43\" type=\"radio\"\n\t\t\t\t\t\t\t\t\trequired>\n\t\t\t\t\t\t\t\t<label class=\"radio-inline\" for=\"male\">Male</label>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t<input name=\"genderType\" id=\"female\" [(ngModel)]=\"userFormData.genderId\" [value]=\"44\" type=\"radio\"\n\t\t\t\t\t\t\t\t\trequired>\n\t\t\t\t\t\t\t\t<label class=\"radio-inline\" for=\"female\">Female</label>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"select-box\">\n\t\t\t\t\t\t\t<label>Blood Group</label>\n\t\t\t\t\t\t\t<select name=\"bloodGroup\" id=\"bloodGroup\" class=\"form-control\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.bloodGroup\">\n\t\t\t\t\t\t\t\t<option [ngValue]=\"null\" disabled selected hidden>Select</option>\n\t\t\t\t\t\t\t\t<option *ngFor=\"let item of bloodGroupData\">{{ item.lookupValueName }}\n\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"mt-4 float-right\">\n\t\t\t\t\t<submit-button [isSubmit]=\"isDataSubmitted\">Submit</submit-button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</ng-container>\n\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"family-members-details-wrapper\">\n\n\t<app-loader *ngIf=\"!isDataLoaded\"></app-loader>\n\n\t<ng-container *ngIf=\"isDataLoaded && !isFamilyNew\">\n\t\t<div class=\"row\"  *ngIf=\"isAdmin || isUserEdit\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<div class=\"d-flex justify-content-end mb-3\">\n\t\t\t\t\t<div class=\"link\" (click)=\"showEditForm()\">\n\t\t\t\t\t\t<mat-icon  [color]=\"'primary'\" *ngIf=\"isEdit\" [svgIcon]=\"'arrow_back'\"></mat-icon>\n\t\t\t\t\t\t<mat-icon class=\"icon-md\" [color]=\"'primary'\" *ngIf=\"!isEdit\" svgIcon=\"feather:edit\"></mat-icon>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"link ml-1\" (click)=\"deleteMember()\" *ngIf=\"!isEdit\">\n\t\t\t\t\t\t<mat-icon class=\"icon-md delete\" svgIcon=\"feather:trash\"></mat-icon>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</ng-container>\n\n\t<!-- Edit Form -->\n\t<ng-container *ngIf=\"!isEdit && !isFamilyNew\">\n\t\t<form #profileFamilyForm=\"ngForm\" name=\"profileFamilyForm\" novalidate>\n\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>First Name {{userId}}</label>\n\t\t\t\t\t\t\t<p>{{user.firstName | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Middle Name</label>\n\t\t\t\t\t\t\t<p>{{user.middleName | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Last Name</label>\n\t\t\t\t\t\t\t<p>{{user.lastName | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Relationship</label>\n\t\t\t\t\t\t\t<p>{{user.relationship | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Phone/Mobile</label>\n\t\t\t\t\t\t\t<p>{{user.phoneNumber?.number | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Email</label>\n\t\t\t\t\t\t\t<p>{{user.emailId | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Date Of Birth</label>\n\t\t\t\t\t\t\t<p>{{getDOB(user.dob) | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box radio-box\">\n\t\t\t\t\t\t\t<label>Gender</label>\n\t\t\t\t\t\t\t<p>{{getGender(user.genderId) | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"select-box\">\n\t\t\t\t\t\t\t<label>Blood Group</label>\n\t\t\t\t\t\t\t<p>{{user.bloodGroup | notAvail }}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t</form>\n\t</ng-container>\n\n\t<!-- New Form -->\n\t<ng-container *ngIf=\"isEdit || isFamilyNew\">\n\t\t<form #profileFamilyForm=\"ngForm\" name=\"profileFamilyForm\" (ngSubmit)=\"submitProfileFamilyForm(profileFamilyForm)\" novalidate>\n\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>First Name*</label>\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Enter value\" name=\"firstName\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.firstName\" required>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Middle Name</label>\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Enter value\" name=\"middleName\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.middleName\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Last Name*</label>\n\t\t\t\t\t\t\t<input type=\"text\" class=\"form-control\" placeholder=\"Enter value\" name=\"lastName\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.lastName\" required>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label class=\"d-block\">Phone/Mobile No<span class=\"required\">*</span></label>\n\t\t\t\t\t\t\t<ngx-intl-tel-input [inputId]=\"'userMobile'\"\n\t\t\t\t\t\t\t\t[preferredCountries]=\"preferredCountries\"\n\t\t\t\t\t\t\t\t[enableAutoCountrySelect]=\"true\" [enablePlaceholder]=\"true\"\n\t\t\t\t\t\t\t\t[searchCountryFlag]=\"true\"\n\t\t\t\t\t\t\t\t[searchCountryField]=\"[SearchCountryField.Iso2, SearchCountryField.Name]\"\n\t\t\t\t\t\t\t\t[selectFirstCountry]=\"false\"\n\t\t\t\t\t\t\t\t[selectedCountryISO]=\"selectedCountryISO\" [maxLength]=\"15\"\n\t\t\t\t\t\t\t\t[phoneValidation]=\"false\" [separateDialCode]=\"separateDialCode\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.phoneNumber\" name=\"phone\">\n\t\t\t\t\t\t\t</ngx-intl-tel-input>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"select-box\">\n\t\t\t\t\t\t\t<label>Relationship*</label>\n\t\t\t\t\t\t\t<select name=\"relationship\" id=\"relationship\" class=\"form-control\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.relationship\">\n\t\t\t\t\t\t\t\t<option [ngValue]=\"null\" disabled selected hidden>Select</option>\n\t\t\t\t\t\t\t\t<option *ngFor=\"let item of relationshipList\">{{ item }}\n\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Email</label>\n\t\t\t\t\t\t\t<input type=\"email\" class=\"form-control\" placeholder=\"Enter value\" name=\"email\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.emailId\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Date Of Birth</label>\n\t\t\t\t\t\t\t<input class=\"form-control\" name=\"userDOB\" [owlDateTime]=\"userDOB\" [owlDateTimeTrigger]=\"userDOB\" placeholder=\"Date\" [(ngModel)]=\"userFormData.dob\">\n\t\t\t\t\t\t\t<owl-date-time #userDOB [pickerType]=\"'calendar'\"></owl-date-time>\n\t\t\t\t\t\t\t<div class=\"date-btn\" [owlDateTimeTrigger]=\"userDOB\">\n\t\t\t\t\t\t\t\t<mat-icon svgIcon=\"feather:calendar\"></mat-icon>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box radio-box\">\n\t\t\t\t\t\t\t<label>Gender*</label>\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t<input name=\"genderType\" id=\"male\" [(ngModel)]=\"userFormData.genderId\" [value]=\"43\" type=\"radio\"\n\t\t\t\t\t\t\t\t\trequired>\n\t\t\t\t\t\t\t\t<label class=\"radio-inline\" for=\"male\">Male</label>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t<input name=\"genderType\" id=\"female\" [(ngModel)]=\"userFormData.genderId\" [value]=\"44\" type=\"radio\"\n\t\t\t\t\t\t\t\t\trequired>\n\t\t\t\t\t\t\t\t<label class=\"radio-inline\" for=\"female\">Female</label>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"select-box\">\n\t\t\t\t\t\t\t<label>Blood Group</label>\n\t\t\t\t\t\t\t<select name=\"bloodGroup\" id=\"bloodGroup\" class=\"form-control\"\n\t\t\t\t\t\t\t\t[(ngModel)]=\"userFormData.bloodGroup\">\n\t\t\t\t\t\t\t\t<option [ngValue]=\"null\" disabled selected hidden>Select</option>\n\t\t\t\t\t\t\t\t<option *ngFor=\"let item of bloodGroupData\">{{ item.lookupValueName }}\n\t\t\t\t\t\t\t\t</option>\n\t\t\t\t\t\t\t</select>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"mt-4 float-right\">\n\t\t\t\t\t<submit-button [isSubmit]=\"isDataSubmitted\">Submit</submit-button>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</ng-container>\n\n</div>");
 
 /***/ }),
 
@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"profile-interest-Group-wrapper p-5\">\n\n  <div class=\"d-flex mb-4\">\n    <h4>My Interest Group</h4>\n  </div>\n\n  <app-loader *ngIf=\"!isDataLoaded\"></app-loader>\n\n  <form *ngIf=\"isDataLoaded\">\n    <div class=\"row\">\n      <div class=\"col-sm-6\">\n        <h6 class=\"mb-4 text-secondary\">User previleged</h6>\n        <div class=\"bg-card shadow p-4 mb-3 d-flex justify-content-between align-items-center\" *ngFor=\"let interestGroup of userInterestGroupCategory\">\n          <label>{{interestGroup.groupName}}</label>\n          <div class=\"custom-checkbox\">\n            <label class=\"custom-switch custom-switch-flat\">\n              <input class=\"custom-switch-input\" type=\"checkbox\" id=\"userPrevileged{{i}}\" name=\"userPrevileged{{i}}\" [(ngModel)]=\"interestGroup.IsAssigned\" (change)=\"updateGroupUser(interestGroup)\"/>\n              <span class=\"custom-switch-label\" data-on=\"On\" data-off=\"Off\"></span> \n              <span class=\"custom-switch-handle\"></span> \n            </label>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-sm-6\">\n        <h6 class=\"mb-4 text-secondary\">Admin previleged</h6>\n        <div class=\"bg-card shadow p-4 mb-3 d-flex justify-content-between align-items-center\" *ngFor=\"let interestGroup of adminInterestGroupCategory\">\n          <label>{{interestGroup.groupName}}</label>\n          <div class=\"custom-checkbox\">\n            <label class=\"custom-switch custom-switch-flat\">\n                <input class=\"custom-switch-input\" type=\"checkbox\" id=\"interest{{i}}\" name=\"interest{{i}}\" [(ngModel)]=\"interestGroup.IsAssigned\" (change)=\"updateGroupUser(interestGroup)\" [disabled]=\"!isAdmin\"/>\n                <span class=\"custom-switch-label\" data-on=\"On\" data-off=\"Off\"></span> \n                <span class=\"custom-switch-handle\"></span> \n            </label>\n          </div>\n        </div>\n      </div>\n    </div>\n  </form>\n\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"profile-interest-Group-wrapper p-5\">\n\n  <div class=\"d-flex mb-4\">\n    <h4>My Interest Group</h4>\n  </div>\n\n  <app-loader *ngIf=\"!isDataLoaded\"></app-loader>\n\n  <form *ngIf=\"isDataLoaded\">\n    <div class=\"row\">\n      <div class=\"col-sm-6\">\n        <h6 class=\"mb-4 text-secondary\">Controlled By User (Public)</h6>\n        <div class=\"bg-card shadow p-4 mb-3 d-flex justify-content-between align-items-center\" *ngFor=\"let interestGroup of userInterestGroupCategory;let i=index\">\n          <label>{{interestGroup.groupName}}</label>\n          <div class=\"custom-checkbox\">\n            <label class=\"custom-switch custom-switch-flat\">\n              <input class=\"custom-switch-input\" type=\"checkbox\" id=\"userPrevileged{{i}}\" name=\"userPrevileged{{i}}\" [(ngModel)]=\"interestGroup.isActive\" (change)=\"updateGroupUser(interestGroup)\"/>\n              <span class=\"custom-switch-label\" data-on=\"On\" data-off=\"Off\"></span> \n              <span class=\"custom-switch-handle\"></span> \n            </label>\n          </div>\n        </div>\n      </div>\n      <div class=\"col-sm-6\">\n        <h6 class=\"mb-4 text-secondary\">Controlled By Admin (Private)</h6>\n        <div class=\"bg-card shadow p-4 mb-3 d-flex justify-content-between align-items-center\" *ngFor=\"let interestGroup of adminInterestGroupCategory;let i=index\">\n          <label>{{interestGroup.groupName}}</label>\n          <div class=\"custom-checkbox\">\n            <label class=\"custom-switch custom-switch-flat\">\n                <input class=\"custom-switch-input\" type=\"checkbox\" id=\"interest{{i}}\" name=\"interest{{i}}\" [(ngModel)]=\"interestGroup.isActive\" (change)=\"updateGroupUser(interestGroup)\" [disabled]=\"!isAdmin\"/>\n                <span class=\"custom-switch-label\" data-on=\"On\" data-off=\"Off\"></span> \n                <span class=\"custom-switch-handle\"></span> \n            </label>\n          </div>\n        </div>\n      </div>\n    </div>\n  </form>\n\n</div>");
 
 /***/ }),
 
@@ -126,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"profile-permissions-wrapper p-5\">\n\n    <h4 class=\"mb-4\">Set Permissions</h4>\n\n    <div class=\"bg-card\">\n        <div class=\"py-2\">\n            <mat-checkbox [color]=\"'primary'\" [formControlName]=\"'pushNotifications'\">Push Notifications</mat-checkbox>\n        </div>\n    </div> \n\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"profile-permissions-wrapper p-5\">\n\n    <h4 class=\"mb-4\">Set Permissions</h4>\n\n    <div class=\"bg-card\">\n        <div class=\"py-2\">\n            <mat-checkbox [color]=\"'primary'\" (change)=\"showOptions($event)\" [disabled]=\"playerID == 'NA'\">Push Notifications</mat-checkbox>\n            <p class=\"text-primary font-medium mt-1\"><span class=\"text-secondary font-normal mr-2\">Device ID:</span>{{playerID}}</p>\n        </div>\n    </div> \n\n</div>");
 
 /***/ }),
 
@@ -139,7 +139,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"profile-pet-details-wrapper\">\n\n\t<ng-container *ngIf=\"!isPetNew\">\n\t\t<div class=\"row\" *ngIf=\"isAdmin || isUserEdit\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<div class=\"d-flex justify-content-end mb-3\">\n\t\t\t\t\t<div class=\"link\" (click)=\"showEditForm()\">\n\t\t\t\t\t\t<mat-icon  [color]=\"'primary'\" *ngIf=\"isEdit\" [svgIcon]=\"'arrow_back'\"></mat-icon>\n\t\t\t\t\t\t<mat-icon class=\"icon-md\" [color]=\"'primary'\" *ngIf=\"!isEdit\" svgIcon=\"feather:edit\"></mat-icon>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"link ml-1\" (click)=\"deletePet()\" *ngIf=\"!isEdit\">\n\t\t\t\t\t\t<mat-icon class=\"icon-md delete\" svgIcon=\"feather:trash\"></mat-icon>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\t\n\t</ng-container>\n\n\t<ng-container *ngIf=\"!isEdit && !isPetNew\">\n\t\t<form #profilePetForm = \"ngForm\" name=\"profilePetForm\"  novalidate>\n\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Pet Type</label>\n\t\t\t\t\t\t\t<p>{{petData?.pet.petType_Label}}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Pet DOB</label>\n\t\t\t\t\t\t\t<p>{{getDate(petData?.pet.dob)}}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</ng-container>\n\n\t<ng-container *ngIf=\"isEdit || isPetNew\">\n\t\t<form #profilePetForm = \"ngForm\" name=\"profilePetForm\" (ngSubmit)=\"submitProfilPetForm(profilePetForm)\"  novalidate>\n\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<condo-select \n\t\t\t\t\t\t\tlabelText=\"Pet Type\"\n\t\t\t\t\t\t\tfieldPlaceholder=\"Select\"\n\t\t\t\t\t\t\t[fieldRequired]=\"'required'\"\n\t\t\t\t\t\t\t[fieldList]=\"petTypeList\"\n\t\t\t\t\t\t\tfieldValue=\"lookupValueName\"\n\t\t\t\t\t\t\t[fieldModel]=\"petFormData.pet.petTypeId\"\n\t\t\t\t\t\t\tfieldId=\"lookupValueId\"\n\t\t\t\t\t\t\t(fieldParams)=\"getSelectedPetType($event)\" \n\t\t\t\t\t\t></condo-select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\n\t\t\t\t\t\t<app-datepicker\n\t\t\t\t\t\t\tlabelText=\"Date Of Birth\"\n\t\t\t\t\t\t\tfieldName=\"PetDOB\"\n\t\t\t\t\t\t\t[fieldRequired]=\"'null'\"\n\t\t\t\t\t\t\ttype=\"date\"\n\t\t\t\t\t\t\t[fieldModel]=\"petFormData.pet.dob\"\n\t\t\t\t\t\t\t(fieldParams)=\"getPetDOB($event)\">\n\t\t\t\t\t\t</app-datepicker>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"float-right mt-4\">\n\t\t\t\t\t<submit-button [isSubmit]=\"isDataSubmitted\">Submit</submit-button>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t</form>\n\t</ng-container>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"profile-pet-details-wrapper\">\n\n\t<ng-container *ngIf=\"!isPetNew\">\n\t\t<div class=\"row\" *ngIf=\"isAdmin || isUserEdit\">\n\t\t\t<div class=\"col-sm-12\">\n\t\t\t\t<div class=\"d-flex justify-content-end mb-3\">\n\t\t\t\t\t<div class=\"link\" (click)=\"showEditForm()\">\n\t\t\t\t\t\t<mat-icon  [color]=\"'primary'\" *ngIf=\"isEdit\" [svgIcon]=\"'arrow_back'\"></mat-icon>\n\t\t\t\t\t\t<mat-icon class=\"icon-md\" [color]=\"'primary'\" *ngIf=\"!isEdit\" svgIcon=\"feather:edit\"></mat-icon>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"link ml-1\" (click)=\"deletePet()\" *ngIf=\"!isEdit\">\n\t\t\t\t\t\t<mat-icon class=\"icon-md delete\" svgIcon=\"feather:trash\"></mat-icon>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\t\n\t</ng-container>\n\n\t<ng-container *ngIf=\"!isEdit && !isPetNew\">\n\t\t<form #profilePetForm = \"ngForm\" name=\"profilePetForm\"  novalidate>\n\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Pet Type</label>\n\t\t\t\t\t\t\t<p>{{petData?.pet.petType_Label}}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Pet DOB</label>\n\t\t\t\t\t\t\t<p>{{getDate(petData?.pet.dob)}}</p>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</form>\n\t</ng-container>\n\n\t<ng-container *ngIf=\"isEdit || isPetNew\">\n\t\t<form #profilePetForm = \"ngForm\" name=\"profilePetForm\" (ngSubmit)=\"submitProfilPetForm(profilePetForm)\"  novalidate>\n\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<condo-select \n\t\t\t\t\t\t\tlabelText=\"Pet Type\"\n\t\t\t\t\t\t\tfieldPlaceholder=\"Select\"\n\t\t\t\t\t\t\t[fieldRequired]=\"'required'\"\n\t\t\t\t\t\t\t[fieldList]=\"petTypeList\"\n\t\t\t\t\t\t\tfieldValue=\"lookupValueName\"\n\t\t\t\t\t\t\t[fieldModel]=\"petFormData.pet.petTypeId\"\n\t\t\t\t\t\t\tfieldId=\"lookupValueId\"\n\t\t\t\t\t\t\t(fieldParams)=\"getSelectedPetType($event)\" \n\t\t\t\t\t\t></condo-select>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t<label>Date Of Birth</label>\n\t\t\t\t\t\t\t<input class=\"form-control\" name=\"PetDOB\" [owlDateTime]=\"PetDOB\" [owlDateTimeTrigger]=\"PetDOB\" placeholder=\"Date\" [(ngModel)]=\"petFormData.pet.dob\">\n\t\t\t\t\t\t\t<owl-date-time #PetDOB [pickerType]=\"'calendar'\"></owl-date-time>\n\t\t\t\t\t\t\t<div class=\"date-btn\" [owlDateTimeTrigger]=\"PetDOB\">\n\t\t\t\t\t\t\t\t<mat-icon svgIcon=\"feather:calendar\"></mat-icon>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"float-right mt-4\">\n\t\t\t\t\t<submit-button [isSubmit]=\"isDataSubmitted\">Submit</submit-button>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\t\t</form>\n\t</ng-container>\n\n</div>\n");
 
 /***/ }),
 
@@ -204,7 +204,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"profile-unit wrapper p-5\">\n\n\t\n\t<app-loader *ngIf=\"!isUserDataLoaded\"></app-loader>\n\n\t<ng-container *ngIf=\"isUserDataLoaded\">\n\t\t<div class=\"d-flex mb-4\">\n\t\t\t<h4>Unit Details</h4>\n\t\t\t<!-- <div class=\"ml-auto\" *ngIf=\"!this.isEdit && (isUserEdit || isAdmin)\">\n\t\t\t\t<button mat-flat-button [color]=\"'accent'\" (click)=\"showEditForm()\">Edit</button>\n\t\t\t</div> -->\n\t\t</div>\n\t</ng-container>\n\n\t<form #profileUnitForm = \"ngForm\" name=\"profileUnitForm\" (ngSubmit)=\"submitProfileUnitForm(profileUnitForm)\" novalidate>\n\n\t\t<div class=\"bg-card shadow\" *ngIf=\"isUserDataLoaded\">\n\n\t\t\t<ng-container *ngIf=\"!isEdit\">\n\t\t\t\n\t\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t<ng-container>\n\t\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Tower Name</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.apartmentBlockNumber}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Unit Name</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.apartmentBlockUnitNumber}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Unit Type</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.unitType}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Car</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.cars}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Intercom</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.intercom}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\n\t\t\t\t\t</ng-container>\n\t\n\t\t\t\t</div>\n\t\t\n\t\t\n\t\t\t</ng-container>\n\t\t\n\t\t\t<!-- <ng-container *ngIf=\"isEdit\">\n\t\t\t\t\t\n\t\t\t\t<div class=\"data-wrapper\">\n\t\n\t\t\t\t\t<div class=\"row\">\n\t\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<condo-select \n\t\t\t\t\t\t\t\tlabelText=\"Tower No\"\n\t\t\t\t\t\t\t\tfieldPlaceholder=\"Select Tower\"\n\t\t\t\t\t\t\t\t[fieldRequired]=\"'required'\"\n\t\t\t\t\t\t\t\t[fieldList]=\"blockList\"\n\t\t\t\t\t\t\t\tfieldValue=\"apartmentBlockNumber\"\n\t\t\t\t\t\t\t\t[fieldModel]=\"blockFormData.apartmentBlockId\"\n\t\t\t\t\t\t\t\tfieldId=\"apartmentBlockId\"\n\t\t\t\t\t\t\t\t(fieldParams)=\"getBlockUnitList($event)\" \n\t\t\t\t\t\t\t></condo-select>\n\t\t\t\t\t\t</div>\n\t\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<condo-select \n\t\t\t\t\t\t\t\tlabelText=\"Unit No\"\n\t\t\t\t\t\t\t\tfieldPlaceholder=\"Select Unit\"\n\t\t\t\t\t\t\t\t[fieldRequired]=\"'required'\"\n\t\t\t\t\t\t\t\t[fieldList]=\"blockUnitList\"\n\t\t\t\t\t\t\t\tfieldValue=\"apartmentBlockUnitNumber\"\n\t\t\t\t\t\t\t\t[fieldModel]=\"blockFormData.apartmentBlockUnitId\"\n\t\t\t\t\t\t\t\tfieldId=\"apartmentBlockUnitId\"\n\t\t\t\t\t\t\t\t(fieldParams)=\"setBlockUnit($event)\" \n\t\t\t\t\t\t\t></condo-select>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<condo-select \n\t\t\t\t\t\t\t\tlabelText=\"Unit Type\"\n\t\t\t\t\t\t\t\tfieldPlaceholder=\"Select Type\"\n\t\t\t\t\t\t\t\t[fieldRequired]=\"'required'\"\n\t\t\t\t\t\t\t\t[fieldList]=\"unitTypeList\"\n\t\t\t\t\t\t\t\tfieldValue=\"lookupValueName\"\n\t\t\t\t\t\t\t\t[fieldModel]=\"blockFormData.unitTypeId\"\n\t\t\t\t\t\t\t\tfieldId=\"lookupValueId\"\n\t\t\t\t\t\t\t\t(fieldParams)=\"setUnitTypeId($event)\" \n\t\t\t\t\t\t\t></condo-select>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t<label>Car (in number)*</label>\n\t\t\t\t\t\t\t\t<input type=\"number\" OnlyNumber=\"true\" class=\"form-control\" placeholder=\"Enter value\" name=\"unitCar\" \n\t\t\t\t\t\t\t\t[(ngModel)]=\"blockFormData.cars\" required>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t<label>Intercom</label>\n\t\t\t\t\t\t\t\t<input type=\"number\" OnlyNumber=\"true\" class=\"form-control\" placeholder=\"Enter value\" name=\"intercom\" [(ngModel)]=\"blockFormData.intercom\" minlength=\"6\" maxlength=\"10\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\n\t\t\t\t</div>\n\t\t\n\t\t\t</ng-container> -->\n\n\t\t</div>\n\n\t\t<div class=\"mt-4 text-right\" *ngIf=\"isEdit && isUserDataLoaded\">\n\t\t\t<!-- <submit-button class=\"mr-2\" [isSubmit]=\"isDataSubmitted\">Submit</submit-button> -->\n\t\t\t<button mat-button (click)=\"isEdit=false\">Back</button>\n\t\t</div>\n\t\n\t</form>\n\t\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"profile-unit wrapper p-5\">\n\n\t\n\t<app-loader *ngIf=\"!isUserDataLoaded\"></app-loader>\n\n\t<ng-container *ngIf=\"isUserDataLoaded\">\n\t\t<div class=\"d-flex mb-4\">\n\t\t\t<h4>Unit Details</h4>\n\t\t\t<!-- <div class=\"ml-auto\" *ngIf=\"!this.isEdit && (isUserEdit || isAdmin)\">\n\t\t\t\t<button mat-flat-button [color]=\"'accent'\" (click)=\"showEditForm()\">Edit</button>\n\t\t\t</div> -->\n\t\t</div>\n\t</ng-container>\n\n\t<form #profileUnitForm = \"ngForm\" name=\"profileUnitForm\" (ngSubmit)=\"submitProfileUnitForm(profileUnitForm)\" novalidate>\n\n\t\t<div class=\"bg-card shadow\" *ngIf=\"isUserDataLoaded\">\n\n\t\t\t<ng-container *ngIf=\"!isEdit\">\n\t\t\t\n\t\t\t\t<div class=\"data-wrapper\">\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t<ng-container>\n\t\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Tower Name</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.apartmentBlockNumber}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Unit Name</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.apartmentBlockUnitNumber}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Unit Type</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.unitType}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Allowed Car Parking</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.cars}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\t\n\t\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t\t<label>Intercom</label>\n\t\t\t\t\t\t\t\t\t<p>{{block.intercom}}</p>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\n\t\t\t\t\t</ng-container>\n\t\n\t\t\t\t</div>\n\t\t\n\t\t\n\t\t\t</ng-container>\n\t\t\n\t\t\t<!-- <ng-container *ngIf=\"isEdit\">\n\t\t\t\t\t\n\t\t\t\t<div class=\"data-wrapper\">\n\t\n\t\t\t\t\t<div class=\"row\">\n\t\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<condo-select \n\t\t\t\t\t\t\t\tlabelText=\"Tower No\"\n\t\t\t\t\t\t\t\tfieldPlaceholder=\"Select Tower\"\n\t\t\t\t\t\t\t\t[fieldRequired]=\"'required'\"\n\t\t\t\t\t\t\t\t[fieldList]=\"blockList\"\n\t\t\t\t\t\t\t\tfieldValue=\"apartmentBlockNumber\"\n\t\t\t\t\t\t\t\t[fieldModel]=\"blockFormData.apartmentBlockId\"\n\t\t\t\t\t\t\t\tfieldId=\"apartmentBlockId\"\n\t\t\t\t\t\t\t\t(fieldParams)=\"getBlockUnitList($event)\" \n\t\t\t\t\t\t\t></condo-select>\n\t\t\t\t\t\t</div>\n\t\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<condo-select \n\t\t\t\t\t\t\t\tlabelText=\"Unit No\"\n\t\t\t\t\t\t\t\tfieldPlaceholder=\"Select Unit\"\n\t\t\t\t\t\t\t\t[fieldRequired]=\"'required'\"\n\t\t\t\t\t\t\t\t[fieldList]=\"blockUnitList\"\n\t\t\t\t\t\t\t\tfieldValue=\"apartmentBlockUnitNumber\"\n\t\t\t\t\t\t\t\t[fieldModel]=\"blockFormData.apartmentBlockUnitId\"\n\t\t\t\t\t\t\t\tfieldId=\"apartmentBlockUnitId\"\n\t\t\t\t\t\t\t\t(fieldParams)=\"setBlockUnit($event)\" \n\t\t\t\t\t\t\t></condo-select>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<condo-select \n\t\t\t\t\t\t\t\tlabelText=\"Unit Type\"\n\t\t\t\t\t\t\t\tfieldPlaceholder=\"Select Type\"\n\t\t\t\t\t\t\t\t[fieldRequired]=\"'required'\"\n\t\t\t\t\t\t\t\t[fieldList]=\"unitTypeList\"\n\t\t\t\t\t\t\t\tfieldValue=\"lookupValueName\"\n\t\t\t\t\t\t\t\t[fieldModel]=\"blockFormData.unitTypeId\"\n\t\t\t\t\t\t\t\tfieldId=\"lookupValueId\"\n\t\t\t\t\t\t\t\t(fieldParams)=\"setUnitTypeId($event)\" \n\t\t\t\t\t\t\t></condo-select>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t<label>Car (in number)*</label>\n\t\t\t\t\t\t\t\t<input type=\"number\" OnlyNumber=\"true\" class=\"form-control\" placeholder=\"Enter value\" name=\"unitCar\" \n\t\t\t\t\t\t\t\t[(ngModel)]=\"blockFormData.cars\" required>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"col-sm-6\">\n\t\t\t\t\t\t\t<div class=\"input-box\">\n\t\t\t\t\t\t\t\t<label>Intercom</label>\n\t\t\t\t\t\t\t\t<input type=\"number\" OnlyNumber=\"true\" class=\"form-control\" placeholder=\"Enter value\" name=\"intercom\" [(ngModel)]=\"blockFormData.intercom\" minlength=\"6\" maxlength=\"10\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\n\t\t\t\t</div>\n\t\t\n\t\t\t</ng-container> -->\n\n\t\t</div>\n\n\t\t<div class=\"mt-4 text-right\" *ngIf=\"isEdit && isUserDataLoaded\">\n\t\t\t<!-- <submit-button class=\"mr-2\" [isSubmit]=\"isDataSubmitted\">Submit</submit-button> -->\n\t\t\t<button mat-button (click)=\"isEdit=false\">Back</button>\n\t\t</div>\n\t\n\t</form>\n\t\n</div>");
 
 /***/ }),
 
@@ -874,7 +874,7 @@ let ProfileAreaBasicComponent = class ProfileAreaBasicComponent {
         });
         // Subscribe to the resolved route data
         this._activatedRoute.parent.data.subscribe((data) => {
-            this.user = data.initialData.profileUser;
+            this.user = Object.assign({}, data.initialData.profileUser);
             if (!this.user.phoneNumber.number) {
                 this.user.phoneNumber = {
                     'number': this.user.phoneNumber,
@@ -1284,6 +1284,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_modules_ui_help_tooltip_help_tooltip_module__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! src/app/modules/ui/help-tooltip/help-tooltip.module */ "./src/app/modules/ui/help-tooltip/help-tooltip.module.ts");
 /* harmony import */ var src_app_modules_ui_message_message_module__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! src/app/modules/ui/message/message.module */ "./src/app/modules/ui/message/message.module.ts");
 /* harmony import */ var _profile_permissions_profile_permissions_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./profile-permissions/profile-permissions.component */ "./src/app/modules/profile/profile-permissions/profile-permissions.component.ts");
+/* harmony import */ var _ngx_translate_core__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @ngx-translate/core */ "./node_modules/@ngx-translate/core/__ivy_ngcc__/fesm2015/ngx-translate-core.js");
+
 
 
 
@@ -1367,7 +1369,8 @@ ProfileAreaModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             src_app_modules_ui_datepicker_datepicker_module__WEBPACK_IMPORTED_MODULE_12__["DatepickerModule"].forRoot(),
             src_condo_directives_scrollbar__WEBPACK_IMPORTED_MODULE_10__["CondoScrollbarModule"],
             ngx_intl_tel_input__WEBPACK_IMPORTED_MODULE_33__["NgxIntlTelInputModule"],
-            src_app_modules_ui_help_tooltip_help_tooltip_module__WEBPACK_IMPORTED_MODULE_36__["HelpTooltipModule"]
+            src_app_modules_ui_help_tooltip_help_tooltip_module__WEBPACK_IMPORTED_MODULE_36__["HelpTooltipModule"],
+            _ngx_translate_core__WEBPACK_IMPORTED_MODULE_39__["TranslateModule"]
         ],
         bootstrap: [_profile_area_component__WEBPACK_IMPORTED_MODULE_13__["ProfileAreaComponent"]]
     })
@@ -1600,9 +1603,6 @@ let ProfileFamilyMembersDetailsComponent = class ProfileFamilyMembersDetailsComp
     }
     getGender(id) {
         return id == '43' ? 'Male' : 'Female';
-    }
-    getUserDOB(event) {
-        this.userFormData.dob = event;
     }
     getDOB(date) {
         if (date === undefined || date.length == 0) {
@@ -1957,68 +1957,23 @@ let ProfileInterestGroupComponent = class ProfileInterestGroupComponent {
         this.sessionService = sessionService;
         this.apartmentService = apartmentService;
         this.isDataLoaded = false;
+        this.adminInterestGroupCategory = [];
+        this.userInterestGroupCategory = [];
     }
     get isAdmin() {
         return this.sessionService.isAdmin();
     }
-    getUserDetails() {
-        let queryParamBase = {
-            userId: this.userId,
-        };
-        this.apartmentService.getApartmentBlockUnitByUserIdNew(queryParamBase).subscribe((res) => {
-            this.userDetails = res.filter(function (obj) {
-                return obj.apartmentId == this.apartmentId && obj.userid == this.userId;
-            });
-        });
-    }
-    // ChangeInterestGroup(interestGroup) {
-    //   if (interestGroup.IsAssigned) {
-    //     let categoryUser = this.interestGroupUsers.filter((obj) => {
-    //       return obj.broadCastGroupCategoryId == interestGroup.broadCastGroupCategoryId &&
-    //         obj.userId == this.userId;
-    //     })
-    //     if(categoryUser.length > 0)
-    //     this.removeUser(categoryUser[0].broadCastGroupCategoryUserId);
-    //   } else {
-    //     let queryParamBase = {
-    //       userId: this.userId,
-    //     };
-    //     this.apartmentService.getApartmentBlockUnitByUserIdNew(queryParamBase).subscribe((res: any) => {
-    //       var currentAppUserUnits = res.filter((obj) => {
-    //         return obj.apartmentId == this.apartmentID;
-    //       })
-    //       if (currentAppUserUnits != undefined && currentAppUserUnits.length > 0) {
-    //         let userAppUnit = currentAppUserUnits[0];
-    //         this.insertGroupUser(this.userId, userAppUnit.roleId, userAppUnit.apartmentBlockId, userAppUnit.apartmentBlockUnitId, interestGroup.broadCastGroupCategoryId);
-    //       }
-    //     })
-    //   }
-    //   // interestGroup.IsAssigned=!interestGroup.IsAssigned;
-    // }
-    // removeUser(broadCastGroupCategoryUserId) {
-    //   var params = {
-    //     broadCastGroupCategoryUserId: broadCastGroupCategoryUserId,
-    //     deleteBy: this.userId
-    //   }
-    //   this.broadcastService.deleteBroadCastGroupCategoryUser(params).subscribe(
-    //     (res: any) => {
-    //       this.sharedService.setAlertMessage("User has been removed from interest group successfully");
-    //       this.getAllGoupUsers();
-    //     }
-    //   );
-    //   //}
-    // }
     updateGroupUser(data) {
         let params = {
             'broadcast': {
                 'broadCastGroupCategoryId': data.broadCastGroupCategoryId,
                 'userId': this.userId,
-                'roleId': 2,
+                'roleId': this.roleId,
                 'apartmentBlockId': this.apartmentBlockId,
                 'unitId': this.apartmentBlockUnitId,
-                'isActive': true,
-                'insertedBy': data.insertedBy,
-                'insertedOn': data.insertedOn,
+                'isActive': data.isActive,
+                'insertedBy': this.sessionService.userId,
+                'insertedOn': new Date().toISOString(),
                 'updatedBy': this.sessionService.userId,
                 'updatedOn': new Date().toISOString(),
                 'apartmentId': this.sessionService.apartmentId,
@@ -2026,52 +1981,43 @@ let ProfileInterestGroupComponent = class ProfileInterestGroupComponent {
         };
         this.broadcastService.upsertBroadCastGroupCategoryUser(params).subscribe((res) => {
             if (res.message)
-                this.sharedService.openSnackBar("Interest groups mapping to user(s) added successfully", 'success');
-            else
+                this.sharedService.openSnackBar("Interest groups added successfully", 'success');
+            else {
+                data.isActive = !data.isActive;
                 this.sharedService.openSnackBar(res.errorMessage, 'error');
-            //this.getAllGoupUsers();
+            }
+        }, (error) => {
+            data.isActive = !data.isActive;
+            this.sharedService.openSnackBar('Server Error', 'error');
         });
     }
-    // getAllGoupUsers() {
-    //   let queryParamBase = {
-    //     apartmentId: this.apartmentID
-    //   };
-    //   this.broadcastService.getBroadCastGroupCategoryUser(queryParamBase).subscribe((res: any) => {
-    //     this.interestGroupUsers = res;
-    //     this.assignedInterestGroupUsers = this.interestGroupUsers.filter(data => {
-    //       return data.userId == this.userId && data.isActive;
-    //     });
-    //     this.assignedInterestGroupsToUser = [];
-    //     this.assignedInterestGroupUsers.forEach(element => {
-    //       this.assignedInterestGroupsToUser.push(element.broadCastGroupCategoryId);
-    //     });
-    //     this.adminInterestGroupCategory.forEach(element => {
-    //       element.IsAssigned = this.assignedInterestGroupsToUser.includes(element.broadCastGroupCategoryId);
-    //     });
-    //     this.userInterestGroupCategory.forEach(element => {
-    //       element.IsAssigned = this.assignedInterestGroupsToUser.includes(element.broadCastGroupCategoryId);
-    //     });
-    //     this.isDataLoaded = true;
-    //   });
-    // }
     getAllGroupCategory() {
         let queryParamBase = {
-            apartmentId: this.sessionService.apartmentId
+            apartmentId: this.sessionService.apartmentId,
+            UserId: this.userId
         };
-        this.broadcastService.getAllBroadCastGroupCategories(queryParamBase).subscribe((res) => {
-            var allBroadcastGroupCategory = res;
-            //filter active true items
-            this.allBroadcastGroupCategory = allBroadcastGroupCategory.filter(data => {
-                return data.isActive;
+        this.broadcastService.getAssignedbroadcastgroupbyUserId(queryParamBase).subscribe((res) => {
+            let allBroadcastGroupCategory = res;
+            allBroadcastGroupCategory.forEach((data) => {
+                let privilege = data.privilege.split(',');
+                if (privilege.includes('All'))
+                    this.userInterestGroupCategory.push(data);
+                if (privilege.includes('Admin'))
+                    this.adminInterestGroupCategory.push(data);
             });
-            this.adminInterestGroupCategory = this.allBroadcastGroupCategory.filter(data => data.privilege == "Admin");
-            this.userInterestGroupCategory = this.allBroadcastGroupCategory.filter(data => data.privilege == "All");
             this.isDataLoaded = true;
-            //this.getAllGoupUsers();
+        }, (error) => {
+            this.isDataLoaded = true;
+            this.sharedService.openSnackBar('Server Error', 'error');
         });
     }
     ngOnInit() {
-        this.getAllGroupCategory();
+        this._activatedRoute.parent.data.subscribe((data) => {
+            let user = data.initialData.profileUser;
+            if (user.roleId) {
+                this.roleId = user.roleId;
+            }
+        });
         if (!this.isAdmin) {
             this.apartmentBlockId = this.sessionService.apartmentBlockID;
             this.apartmentBlockUnitId = this.sessionService.apartmentBlockUnitID;
@@ -2084,6 +2030,7 @@ let ProfileInterestGroupComponent = class ProfileInterestGroupComponent {
                 this.userId = Number(params.id);
             }
         });
+        this.getAllGroupCategory();
     }
 };
 ProfileInterestGroupComponent.ctorParameters = () => [
@@ -2490,21 +2437,63 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProfilePermissionsComponent", function() { return ProfilePermissionsComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var src_app_api_controllers_Notification__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/api/controllers/Notification */ "./src/app/api/controllers/Notification.ts");
+/* harmony import */ var src_app_core_session_session_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/session/session.service */ "./src/app/core/session/session.service.ts");
+/* harmony import */ var src_app_shared_services_shared_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/shared/services/shared.service */ "./src/app/shared/services/shared.service.ts");
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
 
 
 let ProfilePermissionsComponent = class ProfilePermissionsComponent {
-    constructor() { }
+    constructor(notificationService, sessionService, sharedService) {
+        this.notificationService = notificationService;
+        this.sessionService = sessionService;
+        this.sharedService = sharedService;
+        this.playerID = '';
+    }
+    showOptions(event) {
+        if (event.checked) {
+            this.enablePushNotifyPermission();
+        }
+    }
+    enablePushNotifyPermission() {
+        let details = {
+            "userId": this.sessionService.userId,
+            "playerId": this.playerID,
+            "insertedBy": this.sessionService.userId,
+            "insertedOn": moment_timezone__WEBPACK_IMPORTED_MODULE_5___default()().toISOString()
+        };
+        let params = {
+            OneS: details
+        };
+        this.notificationService.addOneSignalPlayerId(params).subscribe((res) => {
+            this.sharedService.openSnackBar('Push Notification enabled', 'success');
+        }, error => {
+            this.sharedService.openSnackBar('Some error occured', 'error');
+        });
+    }
     ngOnInit() {
+        this.playerID = localStorage.getItem('playerID') || 'NA';
     }
 };
-ProfilePermissionsComponent.ctorParameters = () => [];
+ProfilePermissionsComponent.ctorParameters = () => [
+    { type: src_app_api_controllers_Notification__WEBPACK_IMPORTED_MODULE_2__["NotificationService"] },
+    { type: src_app_core_session_session_service__WEBPACK_IMPORTED_MODULE_3__["SessionService"] },
+    { type: src_app_shared_services_shared_service__WEBPACK_IMPORTED_MODULE_4__["SharedService"] }
+];
 ProfilePermissionsComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-profile-permissions',
         template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./profile-permissions.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/profile/profile-permissions/profile-permissions.component.html")).default,
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./profile-permissions.component.scss */ "./src/app/modules/profile/profile-permissions/profile-permissions.component.scss")).default]
     }),
-    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [])
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [src_app_api_controllers_Notification__WEBPACK_IMPORTED_MODULE_2__["NotificationService"],
+        src_app_core_session_session_service__WEBPACK_IMPORTED_MODULE_3__["SessionService"],
+        src_app_shared_services_shared_service__WEBPACK_IMPORTED_MODULE_4__["SharedService"]])
 ], ProfilePermissionsComponent);
 
 
@@ -2576,9 +2565,6 @@ let ProfilePetDetailsComponent = class ProfilePetDetailsComponent {
             }
         };
         this.modalService = this.injector.get(src_app_shared_services_modal_service__WEBPACK_IMPORTED_MODULE_9__["ModalService"]);
-    }
-    getPetDOB(event) {
-        this.petFormData.pet.dob = event;
     }
     get isAdmin() {
         return this.sessionService.isAdmin();

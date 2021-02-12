@@ -177,7 +177,7 @@ let AddUsersResidentComponent = class AddUsersResidentComponent {
         this.isTenantOrOwnerInfo = {};
     }
     clearAllField() {
-        const message = `Are you sure, you want to clear the data ?`;
+        const message = `Do you want to cancel user creation ?`;
         const dialogData = new src_app_shared_components_common_confirm_modal_common_confirm_modal_component__WEBPACK_IMPORTED_MODULE_14__["ConfirmDialogModel"]("Confirm Action", message);
         const dialogRef = this.dialog.open(src_app_shared_components_common_confirm_modal_common_confirm_modal_component__WEBPACK_IMPORTED_MODULE_14__["CommonConfirmModalComponent"], {
             panelClass: 'material-dialog-medium',
@@ -207,7 +207,7 @@ let AddUsersResidentComponent = class AddUsersResidentComponent {
                     this.translateService.get('VALIDATION').subscribe((data) => {
                         console.log(data);
                         let confirmBoxData = {
-                            message: `${data.USER}  ${this.user.emailId}  ${data.CHECKEMAIL} ?`,
+                            message: `${data.USER}  ${this.user.emailId}  ${data.EXISTSUSERWITHUNITS} ?`,
                             title: `${data.TITLE}`,
                             type: 'email',
                             response: respone[0].blockunitUserDetails
@@ -224,12 +224,14 @@ let AddUsersResidentComponent = class AddUsersResidentComponent {
                     this.cd.markForCheck();
                 }
                 else {
-                    let confirmBoxData = {
-                        message: `User ${this.user.emailId} already exists and not assigned to any units. Do you want to add this emailId to an unit of your community?`,
-                        title: 'Confirm Action',
-                        type: 'email',
-                    };
-                    this.confirmBox(confirmBoxData, respone[0]);
+                    this.translateService.get('VALIDATION').subscribe((data) => {
+                        let confirmBoxData = {
+                            message: `User ${this.user.emailId} already exists and not assigned to any units. Do you want to add this emailId to an unit of your community?`,
+                            title: `${data.TITLE}`,
+                            type: 'email',
+                        };
+                        this.confirmBox(confirmBoxData, respone[0]);
+                    });
                 }
             }, (error) => {
                 this.isValidEmail = false;
